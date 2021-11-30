@@ -26,14 +26,15 @@ char character(char start, int offset)
 {
 	int AsciiValue = start + offset;
 
-	
-
-	if ( (AsciiValue < 65 || AsciiValue  > 90) && ( (AsciiValue < 97) || (AsciiValue > 122) ) )
-		throw invalidRangeException();
-
 	if ((start < 65 || start > 90) && ((start < 97) || (start > 122)))
 		throw invalidCharacterException();
 
+	if ((AsciiValue < 65 || AsciiValue  > 90) && ((AsciiValue < 97) || (AsciiValue > 122)))
+		throw invalidRangeException();
+
+	
+
+	
 
 	return char(AsciiValue);
 
